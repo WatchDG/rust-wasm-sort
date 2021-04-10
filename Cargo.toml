@@ -1,0 +1,17 @@
+[package]
+name = "wasm-sort"
+version = "0.1.0"
+authors = ["WatchDG <baranov@w3m.co>"]
+edition = "2018"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+wasm-bindgen = { version = "0.2" }
+js-sys = "0.3"
+wee_alloc = "0.4"
+
+[profile.release]
+opt-level = 3
+lto = true
