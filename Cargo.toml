@@ -2,6 +2,12 @@
 name = "wasm-sort"
 version = "0.1.0"
 authors = ["WatchDG <baranov@w3m.co>"]
+license = "MIT OR Apache-2.0"
+description = "sort algorithms for wasm"
+homepage = "https://github.com/WatchDG/rust-wasm-sort"
+documentation = "https://docs.rs/rust-wasm-sort"
+repository = "https://github.com/WatchDG/rust-wasm-sort"
+readme = "README.md"
 edition = "2018"
 
 [lib]
