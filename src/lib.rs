@@ -24,3 +24,41 @@ pub fn bubble_sort_int32array(a: &js_sys::Int32Array) -> Vec<i32> {
     bubble_sort(&mut v);
     v
 }
+
+pub fn merge_sort<T: PartialOrd + Clone>(v: &mut [T]) -> (Vec<T>, usize) {
+    let l = v.len();
+    if l == 1 {
+        return (v.to_vec(), 1);
+    }
+    let m = (l as f64 / 2.).floor() as usize;
+    let (lp, rp) = v.split_at_mut(m);
+    let (mut lv, lvl) = merge_sort(lp);
+    let (mut rv, rvl) = merge_sort(rp);
+    let mut li = 0;
+    let mut ri = 0;
+    let mut new_v = Vec::with_capacity(l);
+    for _ in 0..l {
+        if lv[li] > rv[ri] {
+            new_v.push(rv[ri].clone());
+            ri += 1;
+        } else {
+            new_v.push(lv[li].clone());
+            li += 1;
+        }
+        if li == lvl {
+            new_v.extend_from_slice(rv.split_off(ri).as_slice());
+            break;
+        }
+        if ri == rvl {
+            new_v.extend_from_slice(lv.split_off(li).as_slice());
+            break;
+        }
+    }
+    return (new_v, l);
+}
+
+#[wasm_bindgen]
+pub fn merge_sort_int32array(a: &js_sys::Int32Array) -> Vec<i32> {
+    let mut v = a.to_vec();
+    merge_sort(&mut v).0
+}
