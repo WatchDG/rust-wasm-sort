@@ -9,10 +9,10 @@ static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
 
 pub fn bubble_sort<T: PartialOrd>(v: &mut Vec<T>) {
     let l = v.len();
-    for i in 0..(l - 1) {
-        for j in (i + 1)..l {
-            if v[i] > v[j] {
-                v.swap(i, j);
+    for j in 0..(l - 1) {
+        for i in 0..(l - j - 1) {
+            if v[i] > v[i + 1] {
+                v.swap(i, i + 1);
             }
         }
     }
