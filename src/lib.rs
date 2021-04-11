@@ -1,5 +1,5 @@
-extern crate wasm_bindgen;
 extern crate js_sys;
+extern crate wasm_bindgen;
 extern crate wee_alloc;
 
 use wasm_bindgen::prelude::*;
@@ -27,8 +27,8 @@ pub fn bubble_sort_int32array(a: &js_sys::Int32Array) -> Vec<i32> {
 
 pub fn merge_sort<T: PartialOrd + Clone>(v: &mut [T]) -> (Vec<T>, usize) {
     let l = v.len();
-    if l == 1 {
-        return (v.to_vec(), 1);
+    if l < 2 {
+        return (v.to_vec(), l);
     }
     let m = (l as f64 / 2.).floor() as usize;
     let (lp, rp) = v.split_at_mut(m);
