@@ -25,15 +25,17 @@ pub fn bubble_sort_int32array(a: &js_sys::Int32Array) -> Vec<i32> {
     v
 }
 
-pub fn merge_sort<T: PartialOrd + Clone>(v: &mut [T]) -> (Vec<T>, usize) {
+pub fn merge_sort<T: PartialOrd + Clone>(v: &mut [T]) -> Vec<T> {
     let l = v.len();
     if l < 2 {
-        return (v.to_vec(), l);
+        return v.to_vec();
     }
     let m = (l as f64 / 2.).floor() as usize;
     let (lp, rp) = v.split_at_mut(m);
-    let (mut lv, lvl) = merge_sort(lp);
-    let (mut rv, rvl) = merge_sort(rp);
+    let mut lv = merge_sort(lp);
+    let mut rv = merge_sort(rp);
+    let lvl = lv.len();
+    let rvl = rv.len();
     let mut li = 0;
     let mut ri = 0;
     let mut new_v = Vec::with_capacity(l);
@@ -54,11 +56,11 @@ pub fn merge_sort<T: PartialOrd + Clone>(v: &mut [T]) -> (Vec<T>, usize) {
             break;
         }
     }
-    return (new_v, l);
+    return new_v;
 }
 
 #[wasm_bindgen]
 pub fn merge_sort_int32array(a: &js_sys::Int32Array) -> Vec<i32> {
     let mut v = a.to_vec();
-    merge_sort(&mut v).0
+    merge_sort(&mut v)
 }
