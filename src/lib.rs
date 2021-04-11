@@ -74,6 +74,77 @@ pub fn bubble_sort_float32array(a: &js_sys::Float32Array) -> Vec<f32> {
     v
 }
 
+pub fn selection_sort<T: PartialOrd>(v: &mut Vec<T>) {
+    let l = v.len();
+    for i in 0..(l - 1) {
+        let mut mi = i;
+        for j in (i + 1)..l {
+            if v[mi] > v[j] {
+                mi = j;
+            }
+        }
+        if i != mi {
+            v.swap(i, mi);
+        }
+    }
+}
+
+#[wasm_bindgen]
+pub fn selection_sort_int32array(a: &js_sys::Int32Array) -> Vec<i32> {
+    let mut v = a.to_vec();
+    selection_sort(&mut v);
+    v
+}
+
+#[wasm_bindgen]
+pub fn selection_sort_int16array(a: &js_sys::Int16Array) -> Vec<i16> {
+    let mut v = a.to_vec();
+    selection_sort(&mut v);
+    v
+}
+
+#[wasm_bindgen]
+pub fn selection_sort_int8array(a: &js_sys::Int8Array) -> Vec<i8> {
+    let mut v = a.to_vec();
+    selection_sort(&mut v);
+    v
+}
+
+#[wasm_bindgen]
+pub fn selection_sort_uint32array(a: &js_sys::Uint32Array) -> Vec<u32> {
+    let mut v = a.to_vec();
+    selection_sort(&mut v);
+    v
+}
+
+#[wasm_bindgen]
+pub fn selection_sort_uint16array(a: &js_sys::Uint16Array) -> Vec<u16> {
+    let mut v = a.to_vec();
+    selection_sort(&mut v);
+    v
+}
+
+#[wasm_bindgen]
+pub fn selection_sort_uint8array(a: &js_sys::Uint8Array) -> Vec<u8> {
+    let mut v = a.to_vec();
+    selection_sort(&mut v);
+    v
+}
+
+#[wasm_bindgen]
+pub fn selection_sort_float64array(a: &js_sys::Float64Array) -> Vec<f64> {
+    let mut v = a.to_vec();
+    selection_sort(&mut v);
+    v
+}
+
+#[wasm_bindgen]
+pub fn selection_sort_float32array(a: &js_sys::Float32Array) -> Vec<f32> {
+    let mut v = a.to_vec();
+    selection_sort(&mut v);
+    v
+}
+
 pub fn merge_sort<T: PartialOrd + Clone>(v: &mut [T]) -> Vec<T> {
     let l = v.len();
     if l < 2 {
