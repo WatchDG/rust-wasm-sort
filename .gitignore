@@ -1,4 +1,5 @@
 /.idea
 /target
 /pkg
+/deno
 Cargo.lock
