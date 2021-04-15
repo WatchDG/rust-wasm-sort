@@ -1,4 +1,5 @@
 mod merge_sort;
+
 pub use merge_sort::merge_sort_float32array;
 pub use merge_sort::merge_sort_float64array;
 pub use merge_sort::merge_sort_int16array;

@@ -1,3 +1,6 @@
+use sort::merge_sort;
+use wasm_bindgen::prelude::*;
+
 #[wasm_bindgen]
 pub fn merge_sort_int32array(a: &js_sys::Int32Array) -> Vec<i32> {
     let mut v = a.to_vec();
