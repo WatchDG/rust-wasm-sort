@@ -1,4 +1,5 @@
 mod exchange_sorts;
+mod insertion_sorts;
 mod merge_sorts;
 mod selection_sorts;
 
@@ -27,3 +28,21 @@ pub use exchange_sorts::bubble_sort_int8array;
 pub use exchange_sorts::bubble_sort_uint16array;
 pub use exchange_sorts::bubble_sort_uint32array;
 pub use exchange_sorts::bubble_sort_uint8array;
+
+pub use selection_sorts::selection_sort_float32array;
+pub use selection_sorts::selection_sort_float64array;
+pub use selection_sorts::selection_sort_int16array;
+pub use selection_sorts::selection_sort_int32array;
+pub use selection_sorts::selection_sort_int8array;
+pub use selection_sorts::selection_sort_uint16array;
+pub use selection_sorts::selection_sort_uint32array;
+pub use selection_sorts::selection_sort_uint8array;
+
+pub use insertion_sorts::insertion_sort_float32array;
+pub use insertion_sorts::insertion_sort_float64array;
+pub use insertion_sorts::insertion_sort_int16array;
+pub use insertion_sorts::insertion_sort_int32array;
+pub use insertion_sorts::insertion_sort_int8array;
+pub use insertion_sorts::insertion_sort_uint16array;
+pub use insertion_sorts::insertion_sort_uint32array;
+pub use insertion_sorts::insertion_sort_uint8array;
