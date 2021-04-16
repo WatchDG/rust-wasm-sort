@@ -38,6 +38,15 @@ pub use selection_sorts::selection_sort_uint16array;
 pub use selection_sorts::selection_sort_uint32array;
 pub use selection_sorts::selection_sort_uint8array;
 
+pub use selection_sorts::heapsort_float32array;
+pub use selection_sorts::heapsort_float64array;
+pub use selection_sorts::heapsort_int16array;
+pub use selection_sorts::heapsort_int32array;
+pub use selection_sorts::heapsort_int8array;
+pub use selection_sorts::heapsort_uint16array;
+pub use selection_sorts::heapsort_uint32array;
+pub use selection_sorts::heapsort_uint8array;
+
 pub use insertion_sorts::insertion_sort_float32array;
 pub use insertion_sorts::insertion_sort_float64array;
 pub use insertion_sorts::insertion_sort_int16array;
