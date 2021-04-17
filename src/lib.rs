@@ -29,6 +29,15 @@ pub use exchange_sorts::bubble_sort_uint16array;
 pub use exchange_sorts::bubble_sort_uint32array;
 pub use exchange_sorts::bubble_sort_uint8array;
 
+pub use exchange_sorts::quicksort_float32array;
+pub use exchange_sorts::quicksort_float64array;
+pub use exchange_sorts::quicksort_int16array;
+pub use exchange_sorts::quicksort_int32array;
+pub use exchange_sorts::quicksort_int8array;
+pub use exchange_sorts::quicksort_uint16array;
+pub use exchange_sorts::quicksort_uint32array;
+pub use exchange_sorts::quicksort_uint8array;
+
 pub use selection_sorts::selection_sort_float32array;
 pub use selection_sorts::selection_sort_float64array;
 pub use selection_sorts::selection_sort_int16array;
