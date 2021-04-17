@@ -2,6 +2,7 @@ mod exchange_sorts;
 mod insertion_sorts;
 mod merge_sorts;
 mod selection_sorts;
+mod hybrid_sorts;
 
 extern crate js_sys;
 extern crate sort;
@@ -64,3 +65,12 @@ pub use insertion_sorts::insertion_sort_int8array;
 pub use insertion_sorts::insertion_sort_uint16array;
 pub use insertion_sorts::insertion_sort_uint32array;
 pub use insertion_sorts::insertion_sort_uint8array;
+
+pub use hybrid_sorts::introsort_float32array;
+pub use hybrid_sorts::introsort_float64array;
+pub use hybrid_sorts::introsort_int16array;
+pub use hybrid_sorts::introsort_int32array;
+pub use hybrid_sorts::introsort_int8array;
+pub use hybrid_sorts::introsort_uint16array;
+pub use hybrid_sorts::introsort_uint32array;
+pub use hybrid_sorts::introsort_uint8array;
